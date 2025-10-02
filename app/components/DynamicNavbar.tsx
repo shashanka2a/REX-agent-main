@@ -87,7 +87,7 @@ export function DynamicNavbar() {
                     transition={{ duration: 0.3 }}
                   />
                 </motion.button>
-              )))}
+              ))}
             </div>
 
             {/* CTA Button */}
