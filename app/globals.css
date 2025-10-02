@@ -153,13 +153,30 @@
 /* Smooth scrolling for anchor links */
 html {
   scroll-behavior: smooth;
+  /* Improve text rendering on mobile */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
-/* Enhanced focus styles for accessibility */
+/* Enhanced focus styles for accessibility and mobile */
 *:focus-visible {
   outline: 2px solid #a855f7;
   outline-offset: 2px;
   border-radius: 4px;
+}
+
+/* Better touch targets for mobile */
+button, a, [role="button"], input, select, textarea {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Mobile-optimized tap targets */
+@media (hover: none) and (pointer: coarse) {
+  button, a, [role="button"] {
+    min-height: 48px;
+    min-width: 48px;
+  }
 }
 
 /* Reduced motion support */
@@ -191,14 +208,42 @@ html {
   contain: layout;
 }
 
-/* Touch optimization */
+/* Touch optimization - Remove hover effects on touch devices */
 @media (hover: none) and (pointer: coarse) {
   .btn-glow:hover {
     transform: none;
+    box-shadow: 0 0 30px rgba(168, 85, 247, 0.4), 0 0 60px rgba(59, 130, 246, 0.2);
   }
   
   button:hover {
     transform: none;
+  }
+  
+  /* Ensure proper touch feedback */
+  button:active, [role="button"]:active {
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
+  }
+}
+
+/* Mobile-specific optimizations */
+@media (max-width: 768px) {
+  /* Reduce motion on mobile for better performance */
+  * {
+    animation-duration: 0.3s !important;
+    transition-duration: 0.3s !important;
+  }
+  
+  /* Better spacing for mobile */
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  /* Optimize font sizes for mobile readability */
+  body {
+    font-size: 16px;
+    line-height: 1.6;
   }
 }
 
@@ -211,5 +256,22 @@ html {
   
   .hero-bg {
     background: #000;
+  }
+}
+
+/* Dark mode optimizations for mobile */
+@media (prefers-color-scheme: dark) {
+  /* Improve contrast on OLED screens */
+  .bg-black {
+    background-color: #000000;
+  }
+  
+  /* Better text contrast */
+  .text-gray-300 {
+    color: #d1d5db;
+  }
+  
+  .text-gray-400 {
+    color: #9ca3af;
   }
 }

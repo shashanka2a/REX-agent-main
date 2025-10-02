@@ -81,24 +81,24 @@ const features = [
 
 export function FeaturesGrid() {
   return (
-    <section className="py-24 bg-slate-900">
-      <div className="container mx-auto px-6 lg:px-8">
+    <section className="py-16 sm:py-20 md:py-24 bg-slate-900">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6">
             Key Features
           </h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-gray-400 max-w-3xl mx-auto px-4 sm:px-0">
             Revolutionary capabilities that transform how software is built, tested, and deployed.
           </p>
         </motion.div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {features.map((feature, index) => (
             <motion.div
               key={feature.title}
@@ -109,16 +109,16 @@ export function FeaturesGrid() {
               viewport={{ once: true }}
               whileHover={{ y: -8 }}
             >
-              <div className={`p-6 h-full bg-gradient-to-br from-slate-800 to-slate-900 border ${feature.border} rounded-2xl transition-all duration-300 group-hover:shadow-lg group-hover:shadow-white/5`}>
-                <div className={`w-12 h-12 ${feature.bg} ${feature.border} border rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                  <feature.icon className={`w-6 h-6 ${feature.color}`} />
+              <div className={`p-4 sm:p-6 h-full bg-gradient-to-br from-slate-800 to-slate-900 border ${feature.border} rounded-2xl transition-all duration-300 group-hover:shadow-lg group-hover:shadow-white/5 min-h-[200px] sm:min-h-0`}>
+                <div className={`w-10 h-10 sm:w-12 sm:h-12 ${feature.bg} ${feature.border} border rounded-xl flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                  <feature.icon className={`w-5 h-5 sm:w-6 sm:h-6 ${feature.color}`} />
                 </div>
                 
-                <h3 className="text-xl font-bold text-white mb-3">
+                <h3 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3">
                   {feature.title}
                 </h3>
                 
-                <p className="text-gray-400 text-sm leading-relaxed">
+                <p className="text-gray-400 text-sm sm:text-base leading-relaxed">
                   {feature.description}
                 </p>
               </div>
@@ -130,7 +130,7 @@ export function FeaturesGrid() {
         </div>
         
         <motion.div 
-          className="mt-16 text-center"
+          className="mt-12 sm:mt-16 text-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}

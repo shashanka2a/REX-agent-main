@@ -30,13 +30,13 @@ export function HeroSection() {
   }
 
   return (
-    <section className="relative min-h-[70vh] md:min-h-[80vh] lg:min-h-[90vh] flex items-center justify-center overflow-hidden hero-bg">
+    <section className="relative min-h-[100vh] flex items-center justify-center overflow-hidden hero-bg px-4 sm:px-6">
       {/* Background gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#0f0f1a] via-[#111827] to-[#1a1f3c]" />
       
       {/* Subtle grid pattern */}
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(168,85,247,0.1)_1px,transparent_1px),linear-gradient(to_bottom,rgba(168,85,247,0.1)_1px,transparent_1px)] bg-[size:4rem_4rem] md:bg-[size:6rem_6rem]" />
+      <div className="absolute inset-0 opacity-10 sm:opacity-20">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(168,85,247,0.1)_1px,transparent_1px),linear-gradient(to_bottom,rgba(168,85,247,0.1)_1px,transparent_1px)] bg-[size:2rem_2rem] sm:bg-[size:4rem_4rem] md:bg-[size:6rem_6rem]" />
       </div>
 
       {/* Floating gradient orbs - Hidden on mobile for performance */}
@@ -69,13 +69,13 @@ export function HeroSection() {
         }}
       />
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="container mx-auto px-0 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-6xl mx-auto">
           {/* Hero Content */}
-          <div className="text-center max-w-4xl mx-auto">
+          <div className="text-center max-w-4xl mx-auto px-4 sm:px-0">
             {/* Main Headline */}
             <motion.h1
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-black text-white leading-[1.1] mb-4 md:mb-6"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-display font-black text-white leading-[1.1] mb-6 md:mb-8"
               initial={{ opacity: 0, y: 30 }}
               animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.8, ease: 'easeOut' }}
@@ -90,7 +90,7 @@ export function HeroSection() {
 
             {/* Subheadline */}
             <motion.p
-              className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 leading-relaxed mb-6 md:mb-8 max-w-[650px] mx-auto font-sans px-4 sm:px-0"
+              className="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8 md:mb-10 max-w-[700px] mx-auto font-sans"
               initial={{ opacity: 0, y: 30 }}
               animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
@@ -101,7 +101,7 @@ export function HeroSection() {
 
             {/* CTA Buttons */}
             <motion.div
-              className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center px-4 sm:px-0"
+              className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center items-center"
               initial={{ opacity: 0, y: 30 }}
               animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.8, delay: 0.4, ease: 'easeOut' }}
@@ -110,10 +110,10 @@ export function HeroSection() {
               <Button
                 onClick={() => handleCTAClick('waitlist')}
                 size="lg"
-                className="px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-semibold bg-gradient-to-r from-violet-600 to-blue-600 hover:from-violet-700 hover:to-blue-700 border-0 rounded-full shadow-glow-violet hover:shadow-glow-blue transition-all duration-300 btn-glow group min-h-[48px] touch-manipulation"
+                className="w-full sm:w-auto px-8 md:px-10 py-4 md:py-5 text-lg md:text-xl font-semibold bg-gradient-to-r from-violet-600 to-blue-600 hover:from-violet-700 hover:to-blue-700 border-0 rounded-full shadow-glow-violet hover:shadow-glow-blue transition-all duration-300 btn-glow group min-h-[56px] touch-manipulation"
               >
                 <span>Join Waitlist</span>
-                <ArrowRight className="w-4 md:w-5 h-4 md:h-5 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
+                <ArrowRight className="w-5 md:w-6 h-5 md:h-6 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
               </Button>
 
               {/* Secondary CTA */}
@@ -121,9 +121,9 @@ export function HeroSection() {
                 onClick={() => handleCTAClick('demo')}
                 variant="outline"
                 size="lg"
-                className="px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-semibold border-2 border-gray-500 text-gray-200 hover:bg-white/5 hover:border-gray-400 rounded-full backdrop-blur-sm transition-all duration-300 group min-h-[48px] touch-manipulation"
+                className="w-full sm:w-auto px-8 md:px-10 py-4 md:py-5 text-lg md:text-xl font-semibold border-2 border-gray-500 text-gray-200 hover:bg-white/5 hover:border-gray-400 rounded-full backdrop-blur-sm transition-all duration-300 group min-h-[56px] touch-manipulation"
               >
-                <Play className="w-4 md:w-5 h-4 md:h-5 mr-2 group-hover:scale-110 transition-transform duration-200" />
+                <Play className="w-5 md:w-6 h-5 md:h-6 mr-2 group-hover:scale-110 transition-transform duration-200" />
                 <span>View Demo</span>
               </Button>
             </motion.div>
