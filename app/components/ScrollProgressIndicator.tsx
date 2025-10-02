@@ -21,8 +21,6 @@ export function ScrollProgressIndicator() {
         boxShadow: '0 0 10px rgba(168, 85, 247, 0.5), 0 0 20px rgba(59, 130, 246, 0.3), 0 0 30px rgba(20, 184, 166, 0.2)',
       }}
       initial={{ scaleX: 0 }}
-      animate={{ scaleX }}
-      transition={{ duration: 0.1 }}
     />
   )
 }
