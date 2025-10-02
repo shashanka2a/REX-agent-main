@@ -72,7 +72,7 @@ export function HeroSection() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-6xl mx-auto">
           {/* Hero Content */}
-          <div className="text-center lg:text-left max-w-4xl mx-auto lg:mx-0">
+          <div className="text-center max-w-4xl mx-auto">
             {/* Main Headline */}
             <motion.h1
               className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-black text-white leading-[1.1] mb-4 md:mb-6"
@@ -85,18 +85,12 @@ export function HeroSection() {
                 <span className="text-gradient bg-gradient-to-r from-violet-400 via-blue-500 to-teal-400 bg-clip-text text-transparent font-black">
                   while you sleep
                 </span>
-                {/* Gradient glow effect - Reduced on mobile */}
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-violet-400 via-blue-500 to-teal-400 opacity-10 md:opacity-20 blur-sm -z-10"
-                  animate={{ opacity: [0.1, 0.3, 0.1] }}
-                  transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-                />
               </span>
             </motion.h1>
 
             {/* Subheadline */}
             <motion.p
-              className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 leading-relaxed mb-6 md:mb-8 max-w-[650px] mx-auto lg:mx-0 font-sans px-4 sm:px-0"
+              className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 leading-relaxed mb-6 md:mb-8 max-w-[650px] mx-auto font-sans px-4 sm:px-0"
               initial={{ opacity: 0, y: 30 }}
               animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
@@ -107,7 +101,7 @@ export function HeroSection() {
 
             {/* CTA Buttons */}
             <motion.div
-              className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center lg:justify-start px-4 sm:px-0"
+              className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center px-4 sm:px-0"
               initial={{ opacity: 0, y: 30 }}
               animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.8, delay: 0.4, ease: 'easeOut' }}
