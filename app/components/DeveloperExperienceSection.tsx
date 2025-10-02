@@ -205,7 +205,7 @@ export function DeveloperExperienceSection() {
               </p>
               <div className="flex items-center gap-2 text-green-400 text-xs sm:text-sm font-mono break-all">
                 <Terminal className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0" />
-                <span>rex build "user authentication system"</span>
+                <span>rex build &ldquo;user authentication system&rdquo;</span>
               </div>
             </motion.div>
           </motion.div>
