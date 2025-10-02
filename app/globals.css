@@ -77,6 +77,13 @@
   --gradient-secondary: linear-gradient(135deg, #0f8 0%, #00d4ff 100%);
   --glow-blue: 0 0 20px #00d4ff4d;
   --glow-green: 0 0 20px #00ff884d;
+  
+  /* New design system variables */
+  --hero-bg: linear-gradient(135deg, #0f0f1a 0%, #111827 50%, #1a1f3c 100%);
+  --text-gradient: linear-gradient(135deg, #a855f7 0%, #3b82f6 50%, #14b8a6 100%);
+  --button-primary: linear-gradient(135deg, #7c3aed 0%, #2563eb 100%);
+  --navbar-blur: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(15, 23, 42, 0.8) 100%);
+  --progress-gradient: linear-gradient(90deg, #a855f7 0%, #3b82f6 50%, #14b8a6 100%);
 }
 
 .dark {
@@ -87,4 +94,122 @@
   --gradient-secondary: linear-gradient(135deg, #0f8 0%, #00d4ff 100%);
   --glow-blue: 0 0 20px #00d4ff80;
   --glow-green: 0 0 20px #00ff8880;
+  
+  /* Enhanced dark theme variables */
+  --hero-bg: linear-gradient(135deg, #0f0f1a 0%, #111827 50%, #1a1f3c 100%);
+  --text-gradient: linear-gradient(135deg, #a855f7 0%, #3b82f6 50%, #14b8a6 100%);
+  --button-primary: linear-gradient(135deg, #7c3aed 0%, #2563eb 100%);
+  --navbar-blur: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(15, 23, 42, 0.8) 100%);
+  --progress-gradient: linear-gradient(90deg, #a855f7 0%, #3b82f6 50%, #14b8a6 100%);
+}
+
+/* Custom utility classes */
+.text-gradient {
+  background: var(--text-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.btn-glow {
+  transition: all 0.3s ease;
+}
+
+.btn-glow:hover {
+  box-shadow: 0 0 30px rgba(168, 85, 247, 0.4), 0 0 60px rgba(59, 130, 246, 0.2);
+  transform: translateY(-2px);
+}
+
+.navbar-blur {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  background: var(--navbar-blur);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hero-bg {
+  background: var(--hero-bg);
+}
+
+.progress-bar {
+  background: var(--progress-gradient);
+}
+
+/* Font face declarations for custom fonts */
+@font-face {
+  font-family: 'ClashDisplay';
+  src: url('/fonts/clash-display.woff2') format('woff2');
+  font-weight: 400 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('/fonts/satoshi.woff2') format('woff2');
+  font-weight: 400 900;
+  font-display: swap;
+}
+
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Enhanced focus styles for accessibility */
+*:focus-visible {
+  outline: 2px solid #a855f7;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Performance optimizations */
+.btn-glow,
+.hero-bg,
+.navbar-blur {
+  will-change: transform, opacity;
+}
+
+.text-gradient {
+  will-change: background-position;
+}
+
+/* Prevent layout shift */
+.container {
+  contain: layout;
+}
+
+/* Touch optimization */
+@media (hover: none) and (pointer: coarse) {
+  .btn-glow:hover {
+    transform: none;
+  }
+  
+  button:hover {
+    transform: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .text-gradient {
+    -webkit-text-fill-color: currentColor;
+    background: none;
+  }
+  
+  .hero-bg {
+    background: #000;
+  }
 }
